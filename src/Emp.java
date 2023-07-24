@@ -2,7 +2,7 @@ public class Emp {
     private final int id;
     private String name;
     private int sal; //instance members
-    public static String company = "BitCode"; //class(static) variables
+    private static String company = "BitCode"; //class(static) variables
 
     public Emp(int id, String name, int sal) {
         this.id = id;
@@ -34,14 +34,18 @@ public class Emp {
         this.sal = sal;
     }
 
-    public String getCompany() {
+    public static String getCompany() {
         return company;
     }
 
-    public void setCompany(String company) {
-        this.company = company;
+    //static functions can access only static data members
+    public static void setCompany(String company) {
+        Emp.company = company;
     }
 
+    //non-static function can access non-static(instance) members as well as static members
+    //non-static function can access non-static(instance) members
+    // because it is called on an object and hence receives this
     public void display() {
         System.out.println(id  + " " + name + " " + sal + " " + company);
     }
