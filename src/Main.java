@@ -1,6 +1,8 @@
 public class Main {
     public static void main(String[] args) {
 
+        Demo.e.display();
+
         System.out.println("Company = " + Emp.getCompany());
 
         Emp e1 = new Emp(101, "AA", 1000);
